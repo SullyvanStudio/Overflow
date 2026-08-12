@@ -24,6 +24,7 @@ shadow_size = 5
 shadow_offset = Vector2(2, 2)
 
 [node name="Symptome_etiquette" type="PanelContainer" unique_id=1746258963 node_paths=PackedStringArray("texture_rect", "label")]
+z_index = 1
 custom_minimum_size = Vector2(60, 60)
 custom_maximum_size = Vector2(60, 60)
 propagate_maximum_size = false

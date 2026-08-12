@@ -23,9 +23,15 @@ var patient : PatientData = null:
 			patient = value
 			update_patient()
 
+# Mémorise la référence du node indicateur (sur la silhouette) pour chaque symptôme
+var indicateur_nodes : Dictionary = {}
+var lignes_indicateur : Array[Line2D] = []
+
 
 func update_patient() -> void:
 	if patient :
+		indicateur_nodes.clear()
+		clear_lignes()
 		var age_string : String = str(patient.get_age())
 		var text : String = ""
 		silhouette.update(patient)
@@ -41,6 +47,12 @@ func update_patient() -> void:
 		label.text = text
 		setup_symptome_etiquette()
 
+func clear_lignes() -> void:
+	for line in lignes_indicateur:
+		if is_instance_valid(line):
+			line.queue_free()
+	lignes_indicateur.clear()
+
 func setup_symptome_etiquette() -> void: 
 	var array_symptomes = patient.get_symptomes_array()
 	for sympto in array_symptomes :
@@ -54,19 +66,40 @@ func positionner_symptome_etiquette(etiquette : Control, index : int) -> void:
 		0 : etiquette.set_anchors_preset(Control.PRESET_TOP_LEFT)
 		1 : etiquette.set_anchors_preset(Control.PRESET_TOP_RIGHT)
 		2 : etiquette.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
-		3 : etiquette.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
-	
-	if etiquette.symptome_data.have_indicateur :
-			draw_ligne(etiquette)
+		_ : etiquette.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
 
-func draw_ligne(f):
-	var from = Vector2(f.position.x, f.position.y)
-	var to = Vector2(100, 100)
-	var line = Line2D.new()
+	if etiquette.symptome_data.have_indicateur :
+		draw_ligne_when_ready(etiquette)
+
+func draw_ligne_when_ready(etiquette : Control) -> void:
+	if not is_inside_tree():
+		await ready
+	await get_tree().process_frame
+	await get_tree().process_frame
+	draw_ligne(etiquette)
+
+func draw_ligne(etiquette : Control) -> void:
+	if not is_instance_valid(etiquette):
+		return
+	var symp : Symptome_base = etiquette.symptome_data
+	if not indicateur_nodes.has(symp):
+		push_warning("Pas d'indicateur trouvé pour %s" % symp.nom)
+		return
+	var indicateur_node : Control = indicateur_nodes[symp]
+	if not is_instance_valid(indicateur_node):
+		return
+
+	var inverse_transform : Transform2D = get_global_transform().affine_inverse()
+	var from : Vector2 = inverse_transform * (etiquette.global_position + etiquette.size / 2.0)
+	var to : Vector2 = inverse_transform * (indicateur_node.global_position + indicateur_node.size / 2.0)
+
+	var line := Line2D.new()
 	line.add_point(from)
 	line.add_point(to)
 	line.default_color = Color.DARK_RED
+	line.width = 2.0
 	self.add_child(line)
+	lignes_indicateur.append(line)
 
 func _on_pressed():
 	if patient == null :
@@ -82,5 +115,5 @@ func _on_hover_ended():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.2)
 
-func _on_silhouette_position_indicateur(pos: Vector2, symp: Symptome_base) -> void:
-	print(pos, symp)
+func _on_silhouette_position_indicateur(indicateur_node: Control, symp: Symptome_base) -> void:
+	indicateur_nodes[symp] = indicateur_node

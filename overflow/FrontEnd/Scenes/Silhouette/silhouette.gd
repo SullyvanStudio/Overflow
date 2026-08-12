@@ -14,7 +14,7 @@ extends Control
 @export_category("Scenes")
 @export var indicateur_scene : PackedScene
 
-signal position_indicateur(pos : Vector2, symp : Symptome_base)
+signal position_indicateur(indicateur_node : Control, symp : Symptome_base)
 
 var type : PatientData.TYPE = PatientData.TYPE.HOMME
 var array_zone : Array[Node] = []
@@ -46,7 +46,7 @@ func setup_zone_par_type(_type):
 			array_zone = zone_enfant.get_children()
 
 func add_indicateur(symp : Symptome_base) -> void:
-		var indicateur_node =indicateur_scene.instantiate()
-		var zone = zone_patient.find_child(symp.zone_atteinte)
-		zone.add_child(indicateur_node)
-		position_indicateur.emit(indicateur_node.global_position, symp)
+	var indicateur_node = indicateur_scene.instantiate()
+	var zone = zone_patient.find_child(symp.zone_atteinte)
+	zone.add_child(indicateur_node)
+	position_indicateur.emit(indicateur_node, symp)

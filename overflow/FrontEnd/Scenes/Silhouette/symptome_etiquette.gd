@@ -12,7 +12,7 @@ var symptome_data : Symptome_base:
 func update(symptome : Symptome_base) -> void:
 	label.text = symptome.nom
 	texture_rect.texture = symptome.texture
-	adapt_text_size()
+	adapt_text_size.call_deferred()
 
 func adapt_text_size() -> void:
 	var current_size = 12

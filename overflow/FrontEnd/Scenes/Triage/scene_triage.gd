@@ -23,8 +23,8 @@ func _on_liste_changed(new_liste) -> void:
 func creer_choix_patient() -> void:
 	for _patient in liste_patients:
 		var scene_node = scene_panel_patient.instantiate()
-		scene_node.patient = _patient
 		hbox_container.add_child(scene_node)
+		scene_node.patient = _patient
 
 func start_progress_bar() -> void:
 	var tween = create_tween()

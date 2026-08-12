@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b04lvqnob7tfg"]
+
+[ext_resource type="Script" uid="uid://dy4ib0jdi1toi" path="res://FrontEnd/Scenes/Silhouette/symptome_etiquette.gd" id="1_6btxk"]
+[ext_resource type="Texture2D" uid="uid://d3ixkcyqu7lff" path="res://Ressources/Pictogramme_symptomes/pictogramme_toux.png" id="1_xwpbn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68pkx"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+shadow_color = Color(0, 0, 0, 0.7764706)
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[node name="Symptome_etiquette" type="PanelContainer" unique_id=1746258963 node_paths=PackedStringArray("texture_rect", "label")]
+custom_minimum_size = Vector2(60, 60)
+custom_maximum_size = Vector2(60, 60)
+propagate_maximum_size = false
+offset_right = 60.0
+offset_bottom = 60.0
+pivot_offset = Vector2(30, 30)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-30, -30)
+theme_override_styles/panel = SubResource("StyleBoxFlat_68pkx")
+script = ExtResource("1_6btxk")
+texture_rect = NodePath("VBoxContainer/TextureRect")
+label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1902989014]
+custom_minimum_size = Vector2(60, 60)
+custom_maximum_size = Vector2(60, 60)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=886011941]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("1_xwpbn")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=347993010]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.7808378e-06, 0, 0.64296097, 1)
+theme_override_colors/font_shadow_color = Color(0.2, 0.2, 0.2, 0.21960784)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8862745)
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "NAME
+"
+horizontal_alignment = 1
+vertical_alignment = 1

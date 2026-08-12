@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dqt6nd5wnvugv"]
+
+[ext_resource type="Texture2D" uid="uid://dqxfxwwgwoinv" path="res://Ressources/Silhouette/cercle_zone.png" id="1_pts7k"]
+
+[node name="cercle_zone" type="TextureRect" unique_id=1049376224]
+self_modulate = Color(1, 1, 1, 0.8352941)
+custom_minimum_size = Vector2(30, 30)
+custom_maximum_size = Vector2(100, 100)
+anchors_preset = -1
+anchor_left = 0.48697916
+anchor_top = 0.47685185
+anchor_right = 0.5130208
+anchor_bottom = 0.5231481
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_pts7k")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

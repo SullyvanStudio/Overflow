@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Symptome_base" format=3 uid="uid://h2wm706ekb6k"]
+
+[ext_resource type="Script" uid="uid://c4gpp7uar0o1o" path="res://BackEnd/Ressources/Symptomes/symptome_base.gd" id="1_fke5c"]
+[ext_resource type="Texture2D" uid="uid://blfl00cl6ojhc" path="res://Ressources/Pictogramme_symptomes/pictogramme_douleur_poitrine.png" id="2_pxqaa"]
+
+[resource]
+script = ExtResource("1_fke5c")
+nom = "Douleur Poitrine"
+texture = ExtResource("2_pxqaa")
+zone_atteinte = "poitrine"
+have_indicateur = true
+metadata/_custom_type_script = "uid://c4gpp7uar0o1o"

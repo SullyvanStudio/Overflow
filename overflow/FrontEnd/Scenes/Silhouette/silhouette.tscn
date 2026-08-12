@@ -1,0 +1,661 @@
+[gd_scene format=3 uid="uid://c0vtxpg5o8q82"]
+
+[ext_resource type="Script" uid="uid://d0ku71tqnm2f7" path="res://FrontEnd/Scenes/Silhouette/silhouette.gd" id="1_33l4w"]
+[ext_resource type="Texture2D" uid="uid://d3enjjmvypxsa" path="res://Ressources/Silhouette/silhouette_homme.png" id="2_m0u7p"]
+[ext_resource type="Texture2D" uid="uid://b2vaevvngqp4q" path="res://Ressources/Silhouette/silhouette_femme.png" id="3_0um73"]
+[ext_resource type="Texture2D" uid="uid://b7thxx24ayne7" path="res://Ressources/Silhouette/silhouette_enfant.png" id="4_6ve4h"]
+[ext_resource type="PackedScene" uid="uid://dqt6nd5wnvugv" path="res://FrontEnd/Scenes/Silhouette/cercle_zone.tscn" id="5_0um73"]
+
+[node name="Silhouette" type="Control" unique_id=1908755081 node_paths=PackedStringArray("zone_homme", "zone_femme", "zone_enfant", "texturerect")]
+custom_minimum_size = Vector2(200, 200)
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_33l4w")
+texture_homme = ExtResource("2_m0u7p")
+texture_femme = ExtResource("3_0um73")
+texture_enfant = ExtResource("4_6ve4h")
+zone_homme = NodePath("ZoneHomme")
+zone_femme = NodePath("ZoneFemme")
+zone_enfant = NodePath("ZoneEnfant")
+texturerect = NodePath("TextureRect")
+indicateur_scene = ExtResource("5_0um73")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1512691761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m0u7p")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="ZoneHomme" type="Control" parent="." unique_id=169628138]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="crane" type="Control" parent="ZoneHomme" unique_id=1900257452]
+propagate_maximum_size = true
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.09104938
+anchor_right = 0.5
+anchor_bottom = 0.09104938
+metadata/_edit_use_anchors_ = true
+
+[node name="chevillegch" type="Control" parent="ZoneHomme" unique_id=1839687850]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5260417
+anchor_top = 0.91049385
+anchor_right = 0.5260417
+anchor_bottom = 0.91049385
+metadata/_edit_use_anchors_ = true
+
+[node name="chevilledt" type="Control" parent="ZoneHomme" unique_id=1785785408]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4748264
+anchor_top = 0.89506173
+anchor_right = 0.4748264
+anchor_bottom = 0.89506173
+metadata/_edit_use_anchors_ = true
+
+[node name="genougch" type="Control" parent="ZoneHomme" unique_id=916614437]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5269097
+anchor_top = 0.69753087
+anchor_right = 0.5269097
+anchor_bottom = 0.69753087
+metadata/_edit_use_anchors_ = true
+
+[node name="genoudt" type="Control" parent="ZoneHomme" unique_id=878684581]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4748264
+anchor_top = 0.6990741
+anchor_right = 0.4748264
+anchor_bottom = 0.6990741
+metadata/_edit_use_anchors_ = true
+
+[node name="hanchegch" type="Control" parent="ZoneHomme" unique_id=1469077321]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.53125
+anchor_top = 0.53549385
+anchor_right = 0.53125
+anchor_bottom = 0.53549385
+metadata/_edit_use_anchors_ = true
+
+[node name="hanchedt" type="Control" parent="ZoneHomme" unique_id=1688489586]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.46875
+anchor_top = 0.5416667
+anchor_right = 0.46875
+anchor_bottom = 0.5416667
+metadata/_edit_use_anchors_ = true
+
+[node name="pelvis" type="Control" parent="ZoneHomme" unique_id=957294368]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5277778
+anchor_right = 0.5
+anchor_bottom = 0.5277778
+metadata/_edit_use_anchors_ = true
+
+[node name="poignetgch" type="Control" parent="ZoneHomme" unique_id=1317852283]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.578125
+anchor_top = 0.49228394
+anchor_right = 0.578125
+anchor_bottom = 0.49228394
+metadata/_edit_use_anchors_ = true
+
+[node name="poignetdt" type="Control" parent="ZoneHomme" unique_id=432558484]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.42100695
+anchor_top = 0.4845679
+anchor_right = 0.42100695
+anchor_bottom = 0.4845679
+metadata/_edit_use_anchors_ = true
+
+[node name="humerusgch" type="Control" parent="ZoneHomme" unique_id=1736193933]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5607639
+anchor_top = 0.3287037
+anchor_right = 0.5607639
+anchor_bottom = 0.3287037
+metadata/_edit_use_anchors_ = true
+
+[node name="humerusdt" type="Control" parent="ZoneHomme" unique_id=402717455]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4357639
+anchor_top = 0.33641976
+anchor_right = 0.4357639
+anchor_bottom = 0.33641976
+metadata/_edit_use_anchors_ = true
+
+[node name="epaulegch" type="Control" parent="ZoneHomme" unique_id=2037005349]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5503472
+anchor_top = 0.23919754
+anchor_right = 0.5503472
+anchor_bottom = 0.23919754
+metadata/_edit_use_anchors_ = true
+
+[node name="epauledt" type="Control" parent="ZoneHomme" unique_id=625825183]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4418403
+anchor_top = 0.26080248
+anchor_right = 0.4418403
+anchor_bottom = 0.26080248
+metadata/_edit_use_anchors_ = true
+
+[node name="flgch" type="Control" parent="ZoneHomme" unique_id=105049362]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5208333
+anchor_top = 0.37808642
+anchor_right = 0.5208333
+anchor_bottom = 0.37808642
+metadata/_edit_use_anchors_ = true
+
+[node name="fldt" type="Control" parent="ZoneHomme" unique_id=347080914]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.47916666
+anchor_top = 0.40895063
+anchor_right = 0.47916666
+anchor_bottom = 0.40895063
+metadata/_edit_use_anchors_ = true
+
+[node name="figch" type="Control" parent="ZoneHomme" unique_id=1218028220]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5243056
+anchor_top = 0.46296296
+anchor_right = 0.5243056
+anchor_bottom = 0.46296296
+metadata/_edit_use_anchors_ = true
+
+[node name="fidt" type="Control" parent="ZoneHomme" unique_id=1357619725]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4748264
+anchor_top = 0.4675926
+anchor_right = 0.4748264
+anchor_bottom = 0.4675926
+metadata/_edit_use_anchors_ = true
+
+[node name="abdomen" type="Control" parent="ZoneHomme" unique_id=1164154182]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.41203704
+anchor_right = 0.5
+anchor_bottom = 0.41203704
+metadata/_edit_use_anchors_ = true
+
+[node name="poitrine" type="Control" parent="ZoneHomme" unique_id=1489743081]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4982639
+anchor_top = 0.2962963
+anchor_right = 0.4982639
+anchor_bottom = 0.2962963
+metadata/_edit_use_anchors_ = true
+
+[node name="machoire" type="Control" parent="ZoneHomme" unique_id=898330085]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.17438272
+anchor_right = 0.5
+anchor_bottom = 0.17438272
+metadata/_edit_use_anchors_ = true
+
+[node name="nez" type="Control" parent="ZoneHomme" unique_id=1299453350]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.13117284
+anchor_right = 0.5
+anchor_bottom = 0.13117284
+metadata/_edit_use_anchors_ = true
+
+[node name="ZoneFemme" type="Control" parent="." unique_id=1797679024]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="crane" type="Control" parent="ZoneFemme" unique_id=822067288]
+propagate_maximum_size = true
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.09104938
+anchor_right = 0.5
+anchor_bottom = 0.09104938
+metadata/_edit_use_anchors_ = true
+
+[node name="chevillegch" type="Control" parent="ZoneFemme" unique_id=491336571]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5260417
+anchor_top = 0.91358024
+anchor_right = 0.5260417
+anchor_bottom = 0.91358024
+metadata/_edit_use_anchors_ = true
+
+[node name="chevilledt" type="Control" parent="ZoneFemme" unique_id=1819426689]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4748264
+anchor_top = 0.89506173
+anchor_right = 0.4748264
+anchor_bottom = 0.89506173
+metadata/_edit_use_anchors_ = true
+
+[node name="genougch" type="Control" parent="ZoneFemme" unique_id=1087347876]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5269097
+anchor_top = 0.69753087
+anchor_right = 0.5269097
+anchor_bottom = 0.69753087
+metadata/_edit_use_anchors_ = true
+
+[node name="genoudt" type="Control" parent="ZoneFemme" unique_id=326605821]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4748264
+anchor_top = 0.6990741
+anchor_right = 0.4748264
+anchor_bottom = 0.6990741
+metadata/_edit_use_anchors_ = true
+
+[node name="hanchegch" type="Control" parent="ZoneFemme" unique_id=75332618]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.53125
+anchor_top = 0.53549385
+anchor_right = 0.53125
+anchor_bottom = 0.53549385
+metadata/_edit_use_anchors_ = true
+
+[node name="hanchedt" type="Control" parent="ZoneFemme" unique_id=501488068]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.46875
+anchor_top = 0.5416667
+anchor_right = 0.46875
+anchor_bottom = 0.5416667
+metadata/_edit_use_anchors_ = true
+
+[node name="pelvis" type="Control" parent="ZoneFemme" unique_id=1791050678]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5277778
+anchor_right = 0.5
+anchor_bottom = 0.5277778
+metadata/_edit_use_anchors_ = true
+
+[node name="poignetgch" type="Control" parent="ZoneFemme" unique_id=1952991536]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.578125
+anchor_top = 0.49228394
+anchor_right = 0.578125
+anchor_bottom = 0.49228394
+metadata/_edit_use_anchors_ = true
+
+[node name="poignetdt" type="Control" parent="ZoneFemme" unique_id=713493462]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.42100695
+anchor_top = 0.4845679
+anchor_right = 0.42100695
+anchor_bottom = 0.4845679
+metadata/_edit_use_anchors_ = true
+
+[node name="humerusgch" type="Control" parent="ZoneFemme" unique_id=183440460]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5607639
+anchor_top = 0.3287037
+anchor_right = 0.5607639
+anchor_bottom = 0.3287037
+metadata/_edit_use_anchors_ = true
+
+[node name="humerusdt" type="Control" parent="ZoneFemme" unique_id=455343753]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4357639
+anchor_top = 0.33641976
+anchor_right = 0.4357639
+anchor_bottom = 0.33641976
+metadata/_edit_use_anchors_ = true
+
+[node name="epaulegch" type="Control" parent="ZoneFemme" unique_id=600141374]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5416667
+anchor_top = 0.24845679
+anchor_right = 0.5416667
+anchor_bottom = 0.24845679
+metadata/_edit_use_anchors_ = true
+
+[node name="epauledt" type="Control" parent="ZoneFemme" unique_id=1358350374]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4496528
+anchor_top = 0.25462964
+anchor_right = 0.4496528
+anchor_bottom = 0.25462964
+metadata/_edit_use_anchors_ = true
+
+[node name="flgch" type="Control" parent="ZoneFemme" unique_id=1349425679]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5208333
+anchor_top = 0.41820988
+anchor_right = 0.5208333
+anchor_bottom = 0.41820988
+metadata/_edit_use_anchors_ = true
+
+[node name="fldt" type="Control" parent="ZoneFemme" unique_id=1358337676]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.47916666
+anchor_top = 0.4212963
+anchor_right = 0.47916666
+anchor_bottom = 0.4212963
+metadata/_edit_use_anchors_ = true
+
+[node name="figch" type="Control" parent="ZoneFemme" unique_id=329332194]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5295139
+anchor_top = 0.4861111
+anchor_right = 0.5295139
+anchor_bottom = 0.4861111
+metadata/_edit_use_anchors_ = true
+
+[node name="fidt" type="Control" parent="ZoneFemme" unique_id=870905930]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.46875
+anchor_top = 0.4830247
+anchor_right = 0.46875
+anchor_bottom = 0.4830247
+metadata/_edit_use_anchors_ = true
+
+[node name="abdomen" type="Control" parent="ZoneFemme" unique_id=239674251]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.41203704
+anchor_right = 0.5
+anchor_bottom = 0.41203704
+metadata/_edit_use_anchors_ = true
+
+[node name="poitrine" type="Control" parent="ZoneFemme" unique_id=458815622]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4982639
+anchor_top = 0.2962963
+anchor_right = 0.4982639
+anchor_bottom = 0.2962963
+metadata/_edit_use_anchors_ = true
+
+[node name="machoire" type="Control" parent="ZoneFemme" unique_id=185304842]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.17438272
+anchor_right = 0.5
+anchor_bottom = 0.17438272
+metadata/_edit_use_anchors_ = true
+
+[node name="nez" type="Control" parent="ZoneFemme" unique_id=878547066]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.13117284
+anchor_right = 0.5
+anchor_bottom = 0.13117284
+metadata/_edit_use_anchors_ = true
+
+[node name="ZoneEnfant" type="Control" parent="." unique_id=297012269]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="crane" type="Control" parent="ZoneEnfant" unique_id=630515505]
+propagate_maximum_size = true
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.09104938
+anchor_right = 0.5
+anchor_bottom = 0.09104938
+metadata/_edit_use_anchors_ = true
+
+[node name="chevillegch" type="Control" parent="ZoneEnfant" unique_id=1521058617]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5260417
+anchor_top = 0.91358024
+anchor_right = 0.5260417
+anchor_bottom = 0.91358024
+metadata/_edit_use_anchors_ = true
+
+[node name="chevilledt" type="Control" parent="ZoneEnfant" unique_id=1197940807]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4748264
+anchor_top = 0.89506173
+anchor_right = 0.4748264
+anchor_bottom = 0.89506173
+metadata/_edit_use_anchors_ = true
+
+[node name="genougch" type="Control" parent="ZoneEnfant" unique_id=2057353380]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5269097
+anchor_top = 0.69753087
+anchor_right = 0.5269097
+anchor_bottom = 0.69753087
+metadata/_edit_use_anchors_ = true
+
+[node name="genoudt" type="Control" parent="ZoneEnfant" unique_id=113403561]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4748264
+anchor_top = 0.6990741
+anchor_right = 0.4748264
+anchor_bottom = 0.6990741
+metadata/_edit_use_anchors_ = true
+
+[node name="hanchegch" type="Control" parent="ZoneEnfant" unique_id=757563131]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.53125
+anchor_top = 0.53549385
+anchor_right = 0.53125
+anchor_bottom = 0.53549385
+metadata/_edit_use_anchors_ = true
+
+[node name="hanchedt" type="Control" parent="ZoneEnfant" unique_id=2011190768]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.46875
+anchor_top = 0.5416667
+anchor_right = 0.46875
+anchor_bottom = 0.5416667
+metadata/_edit_use_anchors_ = true
+
+[node name="pelvis" type="Control" parent="ZoneEnfant" unique_id=775601063]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5277778
+anchor_right = 0.5
+anchor_bottom = 0.5277778
+metadata/_edit_use_anchors_ = true
+
+[node name="poignetgch" type="Control" parent="ZoneEnfant" unique_id=2774124]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5772569
+anchor_top = 0.5231481
+anchor_right = 0.5772569
+anchor_bottom = 0.5231481
+metadata/_edit_use_anchors_ = true
+
+[node name="poignetdt" type="Control" parent="ZoneEnfant" unique_id=817731062]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4236111
+anchor_top = 0.5169753
+anchor_right = 0.4236111
+anchor_bottom = 0.5169753
+metadata/_edit_use_anchors_ = true
+
+[node name="humerusgch" type="Control" parent="ZoneEnfant" unique_id=1603377130]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5633681
+anchor_top = 0.3611111
+anchor_right = 0.5633681
+anchor_bottom = 0.3611111
+metadata/_edit_use_anchors_ = true
+
+[node name="humerusdt" type="Control" parent="ZoneEnfant" unique_id=73216634]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.44010416
+anchor_top = 0.36574075
+anchor_right = 0.44010416
+anchor_bottom = 0.36574075
+metadata/_edit_use_anchors_ = true
+
+[node name="epaulegch" type="Control" parent="ZoneEnfant" unique_id=1938078345]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5442708
+anchor_top = 0.27160493
+anchor_right = 0.5442708
+anchor_bottom = 0.27160493
+metadata/_edit_use_anchors_ = true
+
+[node name="epauledt" type="Control" parent="ZoneEnfant" unique_id=1374832665]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.46180555
+anchor_top = 0.27469134
+anchor_right = 0.46180555
+anchor_bottom = 0.27469134
+metadata/_edit_use_anchors_ = true
+
+[node name="flgch" type="Control" parent="ZoneEnfant" unique_id=553224613]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5234375
+anchor_top = 0.41820988
+anchor_right = 0.5234375
+anchor_bottom = 0.41820988
+metadata/_edit_use_anchors_ = true
+
+[node name="fldt" type="Control" parent="ZoneEnfant" unique_id=1685021817]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.47395834
+anchor_top = 0.41820988
+anchor_right = 0.47395834
+anchor_bottom = 0.41820988
+metadata/_edit_use_anchors_ = true
+
+[node name="figch" type="Control" parent="ZoneEnfant" unique_id=1439373193]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5295139
+anchor_top = 0.4861111
+anchor_right = 0.5295139
+anchor_bottom = 0.4861111
+metadata/_edit_use_anchors_ = true
+
+[node name="fidt" type="Control" parent="ZoneEnfant" unique_id=473171431]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.46875
+anchor_top = 0.4830247
+anchor_right = 0.46875
+anchor_bottom = 0.4830247
+metadata/_edit_use_anchors_ = true
+
+[node name="abdomen" type="Control" parent="ZoneEnfant" unique_id=1640383138]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.41203704
+anchor_right = 0.5
+anchor_bottom = 0.41203704
+metadata/_edit_use_anchors_ = true
+
+[node name="poitrine" type="Control" parent="ZoneEnfant" unique_id=654333509]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.4982639
+anchor_top = 0.2962963
+anchor_right = 0.4982639
+anchor_bottom = 0.2962963
+metadata/_edit_use_anchors_ = true
+
+[node name="machoire" type="Control" parent="ZoneEnfant" unique_id=1060567330]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5008681
+anchor_top = 0.20524691
+anchor_right = 0.5008681
+anchor_bottom = 0.20524691
+metadata/_edit_use_anchors_ = true
+
+[node name="nez" type="Control" parent="ZoneEnfant" unique_id=54434528]
+propagate_maximum_size = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.15895061
+anchor_right = 0.5
+anchor_bottom = 0.15895061
+metadata/_edit_use_anchors_ = true

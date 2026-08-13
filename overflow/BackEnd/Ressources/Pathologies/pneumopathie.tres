@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Pathologie_base" format=3 uid="uid://bnw7fwf01a4sf"]
+
+[ext_resource type="Script" uid="uid://d2yqqxwwtkou5" path="res://BackEnd/Ressources/PathologieConstanteRange/pathologie_constante_range.gd" id="1_16d5u"]
+[ext_resource type="Resource" uid="uid://bnet68l13yq3b" path="res://BackEnd/Ressources/Constantes/temperature.tres" id="2_5ebc0"]
+[ext_resource type="Resource" uid="uid://c5pu7yre3rajh" path="res://BackEnd/Ressources/Constantes/saturation.tres" id="3_fvdrs"]
+[ext_resource type="Script" uid="uid://cuaukw7kk07fm" path="res://BackEnd/Ressources/Pathologies/pathologies_base.gd" id="4_k2aul"]
+[ext_resource type="Script" uid="uid://c4gpp7uar0o1o" path="res://BackEnd/Ressources/Symptomes/symptome_base.gd" id="5_wgrvx"]
+[ext_resource type="Resource" uid="uid://crsx1dh4c87m8" path="res://BackEnd/Ressources/Symptomes/toux.tres" id="6_24p3a"]
+[ext_resource type="Resource" uid="uid://h2wm706ekb6k" path="res://BackEnd/Ressources/Symptomes/douleur_poitrine.tres" id="7_nyyc1"]
+[ext_resource type="Resource" uid="uid://d1rp5588eaifi" path="res://BackEnd/Ressources/Symptomes/fievre.tres" id="8_xuqme"]
+
+[sub_resource type="Resource" id="Resource_8p451"]
+script = ExtResource("1_16d5u")
+constante = ExtResource("2_5ebc0")
+valeur_min = 38.0
+valeur_max = 40.9
+
+[sub_resource type="Resource" id="Resource_sgiti"]
+script = ExtResource("1_16d5u")
+constante = ExtResource("3_fvdrs")
+valeur_min = 85.0
+valeur_max = 93.0
+
+[resource]
+script = ExtResource("4_k2aul")
+nom = "Pneumopathie"
+gravite_intrinseque = 40
+symptomes_array = Array[ExtResource("5_wgrvx")]([ExtResource("6_24p3a"), ExtResource("7_nyyc1"), ExtResource("8_xuqme")])
+constantes_perturbees = Array[ExtResource("1_16d5u")]([SubResource("Resource_8p451"), SubResource("Resource_sgiti")])

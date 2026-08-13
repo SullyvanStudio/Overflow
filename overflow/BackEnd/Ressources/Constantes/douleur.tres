@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Constante_base" format=3 uid="uid://sk1mceueiqjn"]
+
+[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_t7ubc"]
+[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_0r388"]
+[ext_resource type="Texture2D" uid="uid://dvbnvi2qhhwrm" path="res://FrontEnd/Ressources/Images/icone/douleur.png" id="3_0r388"]
+
+[sub_resource type="Resource" id="Resource_k7s5q"]
+script = ExtResource("1_t7ubc")
+nom = "Absente"
+valeur_max = 2.0
+
+[sub_resource type="Resource" id="Resource_ndsvj"]
+script = ExtResource("1_t7ubc")
+nom = "Légère"
+valeur_min = 3.0
+valeur_max = 4.0
+gravite = "leger"
+
+[sub_resource type="Resource" id="Resource_do54v"]
+script = ExtResource("1_t7ubc")
+nom = "Modérée"
+valeur_min = 5.0
+valeur_max = 6.0
+gravite = "modere"
+
+[sub_resource type="Resource" id="Resource_g2yxx"]
+script = ExtResource("1_t7ubc")
+nom = "Sévère"
+valeur_min = 7.0
+valeur_max = 8.0
+gravite = "severe"
+
+[sub_resource type="Resource" id="Resource_x73jg"]
+script = ExtResource("1_t7ubc")
+nom = "Critique"
+valeur_min = 9.0
+valeur_max = 10.0
+gravite = "critique"
+
+[resource]
+script = ExtResource("2_0r388")
+nom = "Douleur"
+unite = "/10"
+valeur_normale_max = 2.0
+paliers = Array[ExtResource("1_t7ubc")]([SubResource("Resource_k7s5q"), SubResource("Resource_ndsvj"), SubResource("Resource_do54v"), SubResource("Resource_g2yxx"), SubResource("Resource_x73jg")])
+texture = ExtResource("3_0r388")

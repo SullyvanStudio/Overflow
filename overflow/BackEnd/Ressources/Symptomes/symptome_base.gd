@@ -10,3 +10,4 @@ class_name Symptome_base
 "flgch","fldt","figch","fidt","abdomen","poitrine",
 "machoire","nez")var zone_atteinte : String
 @export var have_indicateur : bool = false
+@export var constante_associee : Constante_base  # optionnel, ex: fièvre -> temperature.tres

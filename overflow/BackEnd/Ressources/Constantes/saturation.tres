@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Constante_base" format=3 uid="uid://c5pu7yre3rajh"]
+
+[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_ncip2"]
+[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_g48xy"]
+[ext_resource type="Texture2D" uid="uid://drogtxa0n8h05" path="res://FrontEnd/Ressources/Images/icone/saturation.png" id="3_g48xy"]
+
+[sub_resource type="Resource" id="Resource_vmpxs"]
+script = ExtResource("1_ncip2")
+nom = "Désaturation critique"
+valeur_min = 70.0
+valeur_max = 84.0
+gravite = "critique"
+
+[sub_resource type="Resource" id="Resource_5r0f2"]
+script = ExtResource("1_ncip2")
+nom = "Désaturation sévère"
+valeur_min = 85.0
+valeur_max = 91.0
+gravite = "severe"
+
+[sub_resource type="Resource" id="Resource_sjscx"]
+script = ExtResource("1_ncip2")
+nom = "Désaturation modérée"
+valeur_min = 92.0
+valeur_max = 94.0
+gravite = "modere"
+
+[sub_resource type="Resource" id="Resource_jiujf"]
+script = ExtResource("1_ncip2")
+nom = "Normal"
+valeur_min = 95.0
+valeur_max = 100.0
+
+[resource]
+script = ExtResource("2_g48xy")
+nom = "Saturation"
+unite = "%"
+valeur_normale_min = 95.0
+valeur_normale_max = 100.0
+paliers = Array[ExtResource("1_ncip2")]([SubResource("Resource_vmpxs"), SubResource("Resource_5r0f2"), SubResource("Resource_sjscx"), SubResource("Resource_jiujf")])
+texture = ExtResource("3_g48xy")

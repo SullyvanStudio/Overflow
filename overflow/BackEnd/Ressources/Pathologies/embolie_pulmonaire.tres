@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Pathologie_base" format=3 uid="uid://b8vf1tfnm612f"]
+
+[ext_resource type="Script" uid="uid://d2yqqxwwtkou5" path="res://BackEnd/Ressources/PathologieConstanteRange/pathologie_constante_range.gd" id="1_5x4nv"]
+[ext_resource type="Resource" uid="uid://c5pu7yre3rajh" path="res://BackEnd/Ressources/Constantes/saturation.tres" id="2_gf2y8"]
+[ext_resource type="Resource" uid="uid://sk1mceueiqjn" path="res://BackEnd/Ressources/Constantes/douleur.tres" id="3_5kt0j"]
+[ext_resource type="Resource" uid="uid://dbiqcpvgci2l1" path="res://BackEnd/Ressources/Constantes/pouls.tres" id="4_mnjbx"]
+[ext_resource type="Resource" uid="uid://bdoduw3bj4ebk" path="res://BackEnd/Ressources/Constantes/frequence_respiratoire.tres" id="5_g35de"]
+[ext_resource type="Script" uid="uid://cuaukw7kk07fm" path="res://BackEnd/Ressources/Pathologies/pathologies_base.gd" id="6_fcs1v"]
+[ext_resource type="Script" uid="uid://c4gpp7uar0o1o" path="res://BackEnd/Ressources/Symptomes/symptome_base.gd" id="7_p8h8h"]
+[ext_resource type="Resource" uid="uid://h2wm706ekb6k" path="res://BackEnd/Ressources/Symptomes/douleur_poitrine.tres" id="8_yixaf"]
+
+[sub_resource type="Resource" id="Resource_g458o"]
+script = ExtResource("1_5x4nv")
+constante = ExtResource("2_gf2y8")
+valeur_min = 80.0
+valeur_max = 93.0
+
+[sub_resource type="Resource" id="Resource_cfdny"]
+script = ExtResource("1_5x4nv")
+constante = ExtResource("3_5kt0j")
+valeur_min = 1.0
+valeur_max = 5.0
+
+[sub_resource type="Resource" id="Resource_lasiq"]
+script = ExtResource("1_5x4nv")
+constante = ExtResource("4_mnjbx")
+valeur_min = 100.0
+valeur_max = 180.0
+
+[sub_resource type="Resource" id="Resource_t0ar6"]
+script = ExtResource("1_5x4nv")
+constante = ExtResource("5_g35de")
+valeur_min = 13.0
+valeur_max = 18.0
+
+[resource]
+script = ExtResource("6_fcs1v")
+nom = "Embolie Pulmonaire"
+gravite_intrinseque = 60
+symptomes_array = Array[ExtResource("7_p8h8h")]([ExtResource("8_yixaf")])
+constantes_perturbees = Array[ExtResource("1_5x4nv")]([SubResource("Resource_g458o"), SubResource("Resource_cfdny"), SubResource("Resource_lasiq"), SubResource("Resource_t0ar6")])

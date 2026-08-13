@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Symptome_base" format=3 uid="uid://d1rp5588eaifi"]
+
+[ext_resource type="Resource" uid="uid://bnet68l13yq3b" path="res://BackEnd/Ressources/Constantes/temperature.tres" id="1_nfeum"]
+[ext_resource type="Script" uid="uid://c4gpp7uar0o1o" path="res://BackEnd/Ressources/Symptomes/symptome_base.gd" id="2_r0xph"]
+[ext_resource type="Texture2D" uid="uid://e7ql7a2ejsab" path="res://Ressources/Pictogramme_symptomes/pictogramme_fievre.png" id="3_ck0ni"]
+
+[resource]
+script = ExtResource("2_r0xph")
+nom = "Fièvre"
+texture = ExtResource("3_ck0ni")
+zone_atteinte = "abdomen"
+constante_associee = ExtResource("1_nfeum")

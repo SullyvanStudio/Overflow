@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 @export var texture_rect : TextureRect
 @export var label : Label
@@ -18,6 +18,6 @@ func adapt_text_size() -> void:
 	var current_size = 12
 	label.add_theme_font_size_override("font_size", current_size)
 	# Réduit la taille tant que le texte dépasse du conteneur
-	while size.x > label.size.x and current_size > 7:
+	while label.size.x > texture_rect.size.x+4 and current_size > 7:
 		current_size -= 1
 		label.add_theme_font_size_override("font_size", current_size)

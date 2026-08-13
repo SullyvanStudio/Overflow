@@ -5,11 +5,13 @@ extends PanelContainer
 @export var silhouette : Control
 @export var sex_texture : TextureRect
 @export var position_symptome_control : Control
+@export var constantes_container : Control
 @export_category("Ressource")
 @export var logo_homme : Texture
 @export var logo_femme : Texture
 @export_category("Scene")
 @export var symptome_etiquette_scene : PackedScene
+
 
 var component : InteractionComponent : 
 	set(value): 
@@ -26,7 +28,6 @@ var patient : PatientData = null:
 # Mémorise la référence du node indicateur (sur la silhouette) pour chaque symptôme
 var indicateur_nodes : Dictionary = {}
 var lignes_indicateur : Array[Line2D] = []
-
 
 func update_patient() -> void:
 	if patient :
@@ -46,6 +47,7 @@ func update_patient() -> void:
 			text = "Enfant de "+age_string+" ans"
 		label.text = text
 		setup_symptome_etiquette()
+		setup_constantes_panel()
 
 func clear_lignes() -> void:
 	for line in lignes_indicateur:
@@ -53,6 +55,8 @@ func clear_lignes() -> void:
 			line.queue_free()
 	lignes_indicateur.clear()
 
+
+#region Symptomes
 func setup_symptome_etiquette() -> void: 
 	var array_symptomes = patient.get_symptomes_array()
 	for sympto in array_symptomes :
@@ -70,6 +74,12 @@ func positionner_symptome_etiquette(etiquette : Control, index : int) -> void:
 
 	if etiquette.symptome_data.have_indicateur :
 		draw_ligne_when_ready(etiquette)
+#endregion
+
+#region Constantes
+func setup_constantes_panel() -> void:
+	constantes_container.patient_constantes = patient.get_constantes_context()
+#endregion
 
 func draw_ligne_when_ready(etiquette : Control) -> void:
 	if not is_inside_tree():

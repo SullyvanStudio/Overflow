@@ -8,7 +8,6 @@
 
 [node name="Silhouette" type="Control" unique_id=1908755081 node_paths=PackedStringArray("zone_homme", "zone_femme", "zone_enfant", "texturerect")]
 custom_minimum_size = Vector2(200, 200)
-clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

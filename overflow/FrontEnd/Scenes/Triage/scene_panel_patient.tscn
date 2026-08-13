@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwhmatyhcqvbc" path="res://FrontEnd/Ressources/Images/logo_femme.png" id="3_3f85g"]
 [ext_resource type="PackedScene" uid="uid://c0vtxpg5o8q82" path="res://FrontEnd/Scenes/Silhouette/silhouette.tscn" id="3_sfrnk"]
 [ext_resource type="PackedScene" uid="uid://b04lvqnob7tfg" path="res://FrontEnd/Scenes/Silhouette/symptome_etiquette.tscn" id="4_3f85g"]
+[ext_resource type="PackedScene" uid="uid://qjw7th2n2odu" path="res://FrontEnd/Scenes/Silhouette/constantes_panel.tscn" id="5_njjkb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqg1d"]
 content_margin_left = 10.0
@@ -24,7 +25,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="Scene_Panel_Patient" type="PanelContainer" unique_id=614567003 node_paths=PackedStringArray("label", "silhouette", "sex_texture", "position_symptome_control")]
+[node name="Scene_Panel_Patient" type="PanelContainer" unique_id=614567003 node_paths=PackedStringArray("label", "silhouette", "sex_texture", "position_symptome_control", "constantes_container")]
 custom_minimum_size = Vector2(300, 400)
 offset_right = 300.0
 offset_bottom = 400.0
@@ -37,6 +38,7 @@ label = NodePath("VBoxContainer/HBoxContainer/identity_label")
 silhouette = NodePath("VBoxContainer/SilhouetteMarginContainer/Silhouette")
 sex_texture = NodePath("VBoxContainer/HBoxContainer/Sex_Texture")
 position_symptome_control = NodePath("VBoxContainer/SilhouetteMarginContainer/Silhouette/MarginContainer/PositionSymptomes")
+constantes_container = NodePath("VBoxContainer/SilhouetteMarginContainer/Silhouette/MarginContainer/PositionSymptomes/Constantes_Panel")
 logo_homme = ExtResource("2_5py7g")
 logo_femme = ExtResource("3_3f85g")
 symptome_etiquette_scene = ExtResource("4_3f85g")
@@ -69,6 +71,16 @@ theme_override_constants/margin_bottom = 50
 
 [node name="PositionSymptomes" type="Control" parent="VBoxContainer/SilhouetteMarginContainer/Silhouette/MarginContainer" unique_id=1095042266]
 layout_mode = 2
+
+[node name="Constantes_Panel" parent="VBoxContainer/SilhouetteMarginContainer/Silhouette/MarginContainer/PositionSymptomes" unique_id=867941252 instance=ExtResource("5_njjkb")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1916751670]
 layout_mode = 2

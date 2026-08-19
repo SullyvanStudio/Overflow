@@ -1,48 +1,49 @@
 [gd_resource type="Resource" script_class="Constante_base" format=3 uid="uid://bnet68l13yq3b"]
 
-[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_dnenc"]
-[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_4us5s"]
-[ext_resource type="Texture2D" uid="uid://4f8ao64c34k5" path="res://FrontEnd/Ressources/Images/icone/temperature.png" id="3_4us5s"]
+[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_4us5s"]
+[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_m7dff"]
+[ext_resource type="Texture2D" uid="uid://4f8ao64c34k5" path="res://FrontEnd/Ressources/Images/icone/temperature.png" id="3_v8dmy"]
 
-[sub_resource type="Resource" id="Resource_m7dff"]
-script = ExtResource("1_dnenc")
+[sub_resource type="Resource" id="Resource_y3uut"]
+script = ExtResource("1_4us5s")
 nom = "Hypothermie sévère"
 valeur_min = 28.0
 valeur_max = 32.0
 gravite = "critique"
 
-[sub_resource type="Resource" id="Resource_v8dmy"]
-script = ExtResource("1_dnenc")
+[sub_resource type="Resource" id="Resource_eftcb"]
+script = ExtResource("1_4us5s")
 nom = "Hypothermie légère"
 valeur_min = 32.0
 valeur_max = 36.0
 gravite = "leger"
 
-[sub_resource type="Resource" id="Resource_y3uut"]
-script = ExtResource("1_dnenc")
+[sub_resource type="Resource" id="Resource_svt5a"]
+script = ExtResource("1_4us5s")
 nom = "Normal"
 valeur_min = 36.1
 valeur_max = 37.5
 
-[sub_resource type="Resource" id="Resource_eftcb"]
-script = ExtResource("1_dnenc")
+[sub_resource type="Resource" id="Resource_1nyop"]
+script = ExtResource("1_4us5s")
 nom = "Hyperthermie modérée"
 valeur_min = 38.0
 valeur_max = 39.0
 gravite = "modere"
 
-[sub_resource type="Resource" id="Resource_svt5a"]
-script = ExtResource("1_dnenc")
+[sub_resource type="Resource" id="Resource_5bxht"]
+script = ExtResource("1_4us5s")
 nom = "Hyperthermie forte"
 valeur_min = 39.0
 valeur_max = 40.9
 gravite = "severe"
 
 [resource]
-script = ExtResource("2_4us5s")
+script = ExtResource("2_m7dff")
 nom = "Température"
 unite = "°C"
 valeur_normale_min = 36.1
 valeur_normale_max = 37.5
-paliers = Array[ExtResource("1_dnenc")]([SubResource("Resource_m7dff"), SubResource("Resource_v8dmy"), SubResource("Resource_y3uut"), SubResource("Resource_eftcb"), SubResource("Resource_svt5a")])
-texture = ExtResource("3_4us5s")
+paliers = Array[ExtResource("1_4us5s")]([SubResource("Resource_y3uut"), SubResource("Resource_eftcb"), SubResource("Resource_svt5a"), SubResource("Resource_1nyop"), SubResource("Resource_5bxht")])
+texture = ExtResource("3_v8dmy")
+decimales = 1

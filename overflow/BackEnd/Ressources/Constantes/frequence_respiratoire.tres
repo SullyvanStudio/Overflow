@@ -1,48 +1,49 @@
 [gd_resource type="Resource" script_class="Constante_base" format=3 uid="uid://bdoduw3bj4ebk"]
 
-[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_c1eau"]
-[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_eyl7l"]
-[ext_resource type="Texture2D" uid="uid://hxdy48cable0" path="res://FrontEnd/Ressources/Images/icone/frequence_respiratoire.png" id="3_eyl7l"]
+[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_eyl7l"]
+[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_xpmgw"]
+[ext_resource type="Texture2D" uid="uid://hxdy48cable0" path="res://FrontEnd/Ressources/Images/icone/frequence_respiratoire.png" id="3_fmxdj"]
 
-[sub_resource type="Resource" id="Resource_xpmgw"]
-script = ExtResource("1_c1eau")
+[sub_resource type="Resource" id="Resource_675j8"]
+script = ExtResource("1_eyl7l")
 nom = "Bradypnée sévère"
 valeur_min = 4.0
 valeur_max = 8.0
 gravite = "critique"
 
-[sub_resource type="Resource" id="Resource_fmxdj"]
-script = ExtResource("1_c1eau")
+[sub_resource type="Resource" id="Resource_qup5q"]
+script = ExtResource("1_eyl7l")
 nom = "Bradypnée légère"
 valeur_min = 9.0
 valeur_max = 11.0
 gravite = "leger"
 
-[sub_resource type="Resource" id="Resource_675j8"]
-script = ExtResource("1_c1eau")
+[sub_resource type="Resource" id="Resource_1cbgc"]
+script = ExtResource("1_eyl7l")
 nom = "Normal"
 valeur_min = 12.0
 valeur_max = 20.0
 
-[sub_resource type="Resource" id="Resource_qup5q"]
-script = ExtResource("1_c1eau")
+[sub_resource type="Resource" id="Resource_8yo86"]
+script = ExtResource("1_eyl7l")
 nom = "Tachypnée modérée"
 valeur_min = 21.0
 valeur_max = 30.0
 gravite = "modere"
 
-[sub_resource type="Resource" id="Resource_1cbgc"]
-script = ExtResource("1_c1eau")
+[sub_resource type="Resource" id="Resource_a2s8g"]
+script = ExtResource("1_eyl7l")
 nom = "Tachypnée sévère"
 valeur_min = 31.0
 valeur_max = 45.0
 gravite = "severe"
 
 [resource]
-script = ExtResource("2_eyl7l")
+script = ExtResource("2_xpmgw")
 nom = "Fréquence respiratoire"
 unite = "/min"
 valeur_normale_min = 12.0
 valeur_normale_max = 20.0
-paliers = Array[ExtResource("1_c1eau")]([SubResource("Resource_xpmgw"), SubResource("Resource_fmxdj"), SubResource("Resource_675j8"), SubResource("Resource_qup5q"), SubResource("Resource_1cbgc")])
-texture = ExtResource("3_eyl7l")
+paliers = Array[ExtResource("1_eyl7l")]([SubResource("Resource_675j8"), SubResource("Resource_qup5q"), SubResource("Resource_1cbgc"), SubResource("Resource_8yo86"), SubResource("Resource_a2s8g")])
+texture = ExtResource("3_fmxdj")
+ordre_affichage = 4

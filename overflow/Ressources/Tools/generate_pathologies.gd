@@ -26,6 +26,8 @@ func _run() -> void:
 			ranges.append(range_res)
 		patho.constantes_perturbees = ranges
 
+		verifier_tension_coherente(entry.nom, entry.get("constantes_perturbees", []))
+
 		var path : String = OUTPUT_DIR + entry.fichier + ".tres"
 		var err := ResourceSaver.save(patho, path)
 		if err == OK:
@@ -34,6 +36,22 @@ func _run() -> void:
 			push_error("Échec sauvegarde : %s (code %d)" % [path, err])
 
 	print("Terminé. %d pathologies générées." % data.size())
+
+
+## Avertit si systolique est perturbée sans diastolique (ou l'inverse) —
+## une tension incohérente (ex: 180/60) sans intention explicite est un piège classique.
+func verifier_tension_coherente(nom_pathologie : String, ranges : Array) -> void:
+	var noms_constantes : Array = []
+	for r in ranges:
+		noms_constantes.append(r.constante)
+
+	var a_systolique := noms_constantes.has("tension_systolique.tres")
+	var a_diastolique := noms_constantes.has("tension_diastolique.tres")
+
+	if a_systolique and not a_diastolique:
+		push_warning("%s : tension systolique perturbée sans diastolique définie." % nom_pathologie)
+	elif a_diastolique and not a_systolique:
+		push_warning("%s : tension diastolique perturbée sans systolique définie." % nom_pathologie)
 
 
 func get_data() -> Array:
@@ -58,6 +76,8 @@ func get_data() -> Array:
 				{"constante": "douleur.tres", "min": 1.0, "max": 5.0},
 				{"constante": "pouls.tres", "min": 100, "max": 180},
 				{"constante": "frequence_respiratoire.tres", "min": 13, "max": 18},
+				{"constante": "tension_systolique.tres", "min": 85.0, "max": 100.0},
+				{"constante": "tension_diastolique.tres", "min": 50.0, "max": 65.0},
 			]
 		},
 		# ... ajoutez une entrée par pathologie

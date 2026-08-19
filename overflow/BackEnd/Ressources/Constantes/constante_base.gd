@@ -7,6 +7,8 @@ class_name Constante_base
 @export var valeur_normale_max : float
 @export var paliers : Array[PalierConstante] = []
 @export var texture : Texture
+@export var decimales : int = 0      # nb de décimales pour l'arrondi et l'affichage
+@export var ordre_affichage : int = 0 # position dans le GridContainer
 
 ## Retourne le palier correspondant à une valeur donnée, ou null si hors plage.
 func get_palier(valeur : float) -> PalierConstante:

@@ -1,41 +1,55 @@
 [gd_resource type="Resource" script_class="Pathologie_base" format=3 uid="uid://b8vf1tfnm612f"]
 
-[ext_resource type="Script" uid="uid://d2yqqxwwtkou5" path="res://BackEnd/Ressources/PathologieConstanteRange/pathologie_constante_range.gd" id="1_5x4nv"]
-[ext_resource type="Resource" uid="uid://c5pu7yre3rajh" path="res://BackEnd/Ressources/Constantes/saturation.tres" id="2_gf2y8"]
-[ext_resource type="Resource" uid="uid://sk1mceueiqjn" path="res://BackEnd/Ressources/Constantes/douleur.tres" id="3_5kt0j"]
-[ext_resource type="Resource" uid="uid://dbiqcpvgci2l1" path="res://BackEnd/Ressources/Constantes/pouls.tres" id="4_mnjbx"]
-[ext_resource type="Resource" uid="uid://bdoduw3bj4ebk" path="res://BackEnd/Ressources/Constantes/frequence_respiratoire.tres" id="5_g35de"]
-[ext_resource type="Script" uid="uid://cuaukw7kk07fm" path="res://BackEnd/Ressources/Pathologies/pathologies_base.gd" id="6_fcs1v"]
-[ext_resource type="Script" uid="uid://c4gpp7uar0o1o" path="res://BackEnd/Ressources/Symptomes/symptome_base.gd" id="7_p8h8h"]
-[ext_resource type="Resource" uid="uid://h2wm706ekb6k" path="res://BackEnd/Ressources/Symptomes/douleur_poitrine.tres" id="8_yixaf"]
+[ext_resource type="Script" uid="uid://d2yqqxwwtkou5" path="res://BackEnd/Ressources/PathologieConstanteRange/pathologie_constante_range.gd" id="1_5kt0j"]
+[ext_resource type="Resource" uid="uid://c5pu7yre3rajh" path="res://BackEnd/Ressources/Constantes/saturation.tres" id="2_mnjbx"]
+[ext_resource type="Resource" uid="uid://sk1mceueiqjn" path="res://BackEnd/Ressources/Constantes/douleur.tres" id="3_g35de"]
+[ext_resource type="Resource" uid="uid://dbiqcpvgci2l1" path="res://BackEnd/Ressources/Constantes/pouls.tres" id="4_fcs1v"]
+[ext_resource type="Resource" uid="uid://bdoduw3bj4ebk" path="res://BackEnd/Ressources/Constantes/frequence_respiratoire.tres" id="5_p8h8h"]
+[ext_resource type="Resource" uid="uid://beuyujylby66i" path="res://BackEnd/Ressources/Constantes/tension_systolique.tres" id="6_yixaf"]
+[ext_resource type="Resource" uid="uid://c40n6bw3o4xvu" path="res://BackEnd/Ressources/Constantes/tension_diastolique.tres" id="7_g458o"]
+[ext_resource type="Script" uid="uid://cuaukw7kk07fm" path="res://BackEnd/Ressources/Pathologies/pathologies_base.gd" id="8_cfdny"]
+[ext_resource type="Script" uid="uid://c4gpp7uar0o1o" path="res://BackEnd/Ressources/Symptomes/symptome_base.gd" id="9_lasiq"]
+[ext_resource type="Resource" uid="uid://h2wm706ekb6k" path="res://BackEnd/Ressources/Symptomes/douleur_poitrine.tres" id="10_t0ar6"]
 
-[sub_resource type="Resource" id="Resource_g458o"]
-script = ExtResource("1_5x4nv")
-constante = ExtResource("2_gf2y8")
+[sub_resource type="Resource" id="Resource_fwvcm"]
+script = ExtResource("1_5kt0j")
+constante = ExtResource("2_mnjbx")
 valeur_min = 80.0
 valeur_max = 93.0
 
-[sub_resource type="Resource" id="Resource_cfdny"]
-script = ExtResource("1_5x4nv")
-constante = ExtResource("3_5kt0j")
+[sub_resource type="Resource" id="Resource_opchn"]
+script = ExtResource("1_5kt0j")
+constante = ExtResource("3_g35de")
 valeur_min = 1.0
 valeur_max = 5.0
 
-[sub_resource type="Resource" id="Resource_lasiq"]
-script = ExtResource("1_5x4nv")
-constante = ExtResource("4_mnjbx")
+[sub_resource type="Resource" id="Resource_bk7hk"]
+script = ExtResource("1_5kt0j")
+constante = ExtResource("4_fcs1v")
 valeur_min = 100.0
 valeur_max = 180.0
 
-[sub_resource type="Resource" id="Resource_t0ar6"]
-script = ExtResource("1_5x4nv")
-constante = ExtResource("5_g35de")
+[sub_resource type="Resource" id="Resource_04iia"]
+script = ExtResource("1_5kt0j")
+constante = ExtResource("5_p8h8h")
 valeur_min = 13.0
 valeur_max = 18.0
 
+[sub_resource type="Resource" id="Resource_besfb"]
+script = ExtResource("1_5kt0j")
+constante = ExtResource("6_yixaf")
+valeur_min = 85.0
+valeur_max = 100.0
+
+[sub_resource type="Resource" id="Resource_xpnut"]
+script = ExtResource("1_5kt0j")
+constante = ExtResource("7_g458o")
+valeur_min = 50.0
+valeur_max = 65.0
+
 [resource]
-script = ExtResource("6_fcs1v")
+script = ExtResource("8_cfdny")
 nom = "Embolie Pulmonaire"
 gravite_intrinseque = 60
-symptomes_array = Array[ExtResource("7_p8h8h")]([ExtResource("8_yixaf")])
-constantes_perturbees = Array[ExtResource("1_5x4nv")]([SubResource("Resource_g458o"), SubResource("Resource_cfdny"), SubResource("Resource_lasiq"), SubResource("Resource_t0ar6")])
+symptomes_array = Array[ExtResource("9_lasiq")]([ExtResource("10_t0ar6")])
+constantes_perturbees = Array[ExtResource("1_5kt0j")]([SubResource("Resource_fwvcm"), SubResource("Resource_opchn"), SubResource("Resource_bk7hk"), SubResource("Resource_04iia"), SubResource("Resource_besfb"), SubResource("Resource_xpnut")])

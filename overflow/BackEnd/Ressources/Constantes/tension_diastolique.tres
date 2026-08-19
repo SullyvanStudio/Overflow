@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Constante_base" format=3 uid="uid://c40n6bw3o4xvu"]
+
+[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_vh131"]
+[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_emw5l"]
+[ext_resource type="Texture2D" uid="uid://dxgp6od8j2f3s" path="res://FrontEnd/Ressources/Images/icone/tension_diastolique.png" id="3_abura"]
+
+[sub_resource type="Resource" id="Resource_ciuko"]
+script = ExtResource("1_vh131")
+nom = "Hypotension sévère"
+valeur_min = 30.0
+valeur_max = 39.0
+gravite = "critique"
+
+[sub_resource type="Resource" id="Resource_imlov"]
+script = ExtResource("1_vh131")
+nom = "Hypotension légère"
+valeur_min = 40.0
+valeur_max = 59.0
+gravite = "leger"
+
+[sub_resource type="Resource" id="Resource_03up6"]
+script = ExtResource("1_vh131")
+nom = "Normal"
+valeur_min = 60.0
+valeur_max = 89.0
+
+[sub_resource type="Resource" id="Resource_3qxu1"]
+script = ExtResource("1_vh131")
+nom = "HTA modérée"
+valeur_min = 90.0
+valeur_max = 109.0
+gravite = "modere"
+
+[sub_resource type="Resource" id="Resource_0bgmd"]
+script = ExtResource("1_vh131")
+nom = "HTA sévère"
+valeur_min = 110.0
+valeur_max = 150.0
+gravite = "severe"
+
+[resource]
+script = ExtResource("2_emw5l")
+nom = "Tension diastolique"
+unite = "mmHg"
+valeur_normale_min = 60.0
+valeur_normale_max = 89.0
+paliers = Array[ExtResource("1_vh131")]([SubResource("Resource_ciuko"), SubResource("Resource_imlov"), SubResource("Resource_03up6"), SubResource("Resource_3qxu1"), SubResource("Resource_0bgmd")])
+texture = ExtResource("3_abura")
+ordre_affichage = 3

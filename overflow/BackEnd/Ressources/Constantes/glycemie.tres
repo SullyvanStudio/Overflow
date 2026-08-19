@@ -1,48 +1,50 @@
 [gd_resource type="Resource" script_class="Constante_base" format=3 uid="uid://cn8xmc1x3l7yi"]
 
-[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_ok5i6"]
-[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_v4cj1"]
-[ext_resource type="Texture2D" uid="uid://bh2h5gtmbns0s" path="res://FrontEnd/Ressources/Images/icone/glycemie.png" id="3_v4cj1"]
+[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_v4cj1"]
+[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_ltp0u"]
+[ext_resource type="Texture2D" uid="uid://bh2h5gtmbns0s" path="res://FrontEnd/Ressources/Images/icone/glycemie.png" id="3_bflim"]
 
-[sub_resource type="Resource" id="Resource_ltp0u"]
-script = ExtResource("1_ok5i6")
+[sub_resource type="Resource" id="Resource_r6ss3"]
+script = ExtResource("1_v4cj1")
 nom = "Hypoglycémie sévère"
 valeur_min = 0.2
 valeur_max = 0.4
 gravite = "critique"
 
-[sub_resource type="Resource" id="Resource_bflim"]
-script = ExtResource("1_ok5i6")
+[sub_resource type="Resource" id="Resource_th8b5"]
+script = ExtResource("1_v4cj1")
 nom = "Hypoglycémie légère"
 valeur_min = 0.5
 valeur_max = 0.69
 gravite = "leger"
 
-[sub_resource type="Resource" id="Resource_r6ss3"]
-script = ExtResource("1_ok5i6")
+[sub_resource type="Resource" id="Resource_feac3"]
+script = ExtResource("1_v4cj1")
 nom = "Normal"
 valeur_min = 0.7
 valeur_max = 1.1
 
-[sub_resource type="Resource" id="Resource_th8b5"]
-script = ExtResource("1_ok5i6")
+[sub_resource type="Resource" id="Resource_8snvn"]
+script = ExtResource("1_v4cj1")
 nom = "Hyperglycémie modérée"
 valeur_min = 1.11
 valeur_max = 2.5
 gravite = "modere"
 
-[sub_resource type="Resource" id="Resource_feac3"]
-script = ExtResource("1_ok5i6")
+[sub_resource type="Resource" id="Resource_st3jw"]
+script = ExtResource("1_v4cj1")
 nom = "Hyperglycémie sévère"
 valeur_min = 2.51
 valeur_max = 6.0
 gravite = "severe"
 
 [resource]
-script = ExtResource("2_v4cj1")
+script = ExtResource("2_ltp0u")
 nom = "Glycémie"
 unite = "g/L"
 valeur_normale_min = 0.7
 valeur_normale_max = 1.1
-paliers = Array[ExtResource("1_ok5i6")]([SubResource("Resource_ltp0u"), SubResource("Resource_bflim"), SubResource("Resource_r6ss3"), SubResource("Resource_th8b5"), SubResource("Resource_feac3")])
-texture = ExtResource("3_v4cj1")
+paliers = Array[ExtResource("1_v4cj1")]([SubResource("Resource_r6ss3"), SubResource("Resource_th8b5"), SubResource("Resource_feac3"), SubResource("Resource_8snvn"), SubResource("Resource_st3jw")])
+texture = ExtResource("3_bflim")
+decimales = 1
+ordre_affichage = 6

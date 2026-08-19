@@ -1,48 +1,49 @@
 [gd_resource type="Resource" script_class="Constante_base" format=3 uid="uid://dbiqcpvgci2l1"]
 
-[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_2xl0s"]
-[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_l4aai"]
-[ext_resource type="Texture2D" uid="uid://dx771a24y5v88" path="res://FrontEnd/Ressources/Images/icone/pouls.png" id="3_l4aai"]
+[ext_resource type="Script" uid="uid://deprfj5avyy6u" path="res://BackEnd/Ressources/ConstantesPaliers/palier_constante.gd" id="1_l4aai"]
+[ext_resource type="Script" uid="uid://cmmxmhgcp5mxp" path="res://BackEnd/Ressources/Constantes/constante_base.gd" id="2_8p3x5"]
+[ext_resource type="Texture2D" uid="uid://dx771a24y5v88" path="res://FrontEnd/Ressources/Images/icone/pouls.png" id="3_qowqd"]
 
-[sub_resource type="Resource" id="Resource_8p3x5"]
-script = ExtResource("1_2xl0s")
+[sub_resource type="Resource" id="Resource_3pad4"]
+script = ExtResource("1_l4aai")
 nom = "Bradycardie sévère"
 valeur_min = 20.0
 valeur_max = 40.0
 gravite = "critique"
 
-[sub_resource type="Resource" id="Resource_qowqd"]
-script = ExtResource("1_2xl0s")
+[sub_resource type="Resource" id="Resource_c412u"]
+script = ExtResource("1_l4aai")
 nom = "Bradycardie légère"
 valeur_min = 40.0
 valeur_max = 59.0
 gravite = "leger"
 
-[sub_resource type="Resource" id="Resource_3pad4"]
-script = ExtResource("1_2xl0s")
+[sub_resource type="Resource" id="Resource_w11um"]
+script = ExtResource("1_l4aai")
 nom = "Normal"
 valeur_min = 60.0
 valeur_max = 100.0
 
-[sub_resource type="Resource" id="Resource_c412u"]
-script = ExtResource("1_2xl0s")
+[sub_resource type="Resource" id="Resource_jnxc7"]
+script = ExtResource("1_l4aai")
 nom = "Tachycardie modérée"
 valeur_min = 101.0
 valeur_max = 120.0
 gravite = "modere"
 
-[sub_resource type="Resource" id="Resource_w11um"]
-script = ExtResource("1_2xl0s")
+[sub_resource type="Resource" id="Resource_3nk27"]
+script = ExtResource("1_l4aai")
 nom = "Tachycardie sévère"
 valeur_min = 121.0
 valeur_max = 180.0
 gravite = "severe"
 
 [resource]
-script = ExtResource("2_l4aai")
+script = ExtResource("2_8p3x5")
 nom = "Pouls"
 unite = "bpm"
 valeur_normale_min = 60.0
 valeur_normale_max = 100.0
-paliers = Array[ExtResource("1_2xl0s")]([SubResource("Resource_8p3x5"), SubResource("Resource_qowqd"), SubResource("Resource_3pad4"), SubResource("Resource_c412u"), SubResource("Resource_w11um")])
-texture = ExtResource("3_l4aai")
+paliers = Array[ExtResource("1_l4aai")]([SubResource("Resource_3pad4"), SubResource("Resource_c412u"), SubResource("Resource_w11um"), SubResource("Resource_jnxc7"), SubResource("Resource_3nk27")])
+texture = ExtResource("3_qowqd")
+ordre_affichage = 1

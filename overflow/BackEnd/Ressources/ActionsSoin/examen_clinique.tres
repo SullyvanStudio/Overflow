@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ActionSoin_base" format=3 uid="uid://ctbjh613l3piq"]
+
+[ext_resource type="Resource" uid="uid://cexevtmm77uqp" path="res://BackEnd/Ressources/RessourcesSoin/medecin.tres" id="1_dps2g"]
+[ext_resource type="Script" uid="uid://dr84n5nxrqxwl" path="res://BackEnd/Ressources/ActionsSoin/actions_soin_base.gd" id="2_8uahg"]
+
+[resource]
+script = ExtResource("2_8uahg")
+nom = "Examen clinique"
+ressource_requise = ExtResource("1_dps2g")
+duree_tours = 2

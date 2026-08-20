@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Ressource_base" format=3 uid="uid://cexevtmm77uqp"]
+
+[ext_resource type="Script" uid="uid://du0gy4snar4ym" path="res://BackEnd/Ressources/RessourcesSoin/ressource_soin_base.gd" id="1_nosg5"]
+
+[resource]
+script = ExtResource("1_nosg5")
+nom = "Médecin"

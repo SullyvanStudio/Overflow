@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ActionSoin_base" format=3 uid="uid://dlhm86c1f2gjg"]
+
+[ext_resource type="Resource" uid="uid://cexevtmm77uqp" path="res://BackEnd/Ressources/RessourcesSoin/medecin.tres" id="1_s0bf2"]
+[ext_resource type="Script" uid="uid://dr84n5nxrqxwl" path="res://BackEnd/Ressources/ActionsSoin/actions_soin_base.gd" id="2_0ffgk"]
+
+[resource]
+script = ExtResource("2_0ffgk")
+nom = "Interprétation ECG"
+ressource_requise = ExtResource("1_s0bf2")
+duree_tours = 2
+est_prescriptible = false

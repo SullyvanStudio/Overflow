@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ressource_base" format=3 uid="uid://b38m3f8ysqafh"]
+
+[ext_resource type="Script" uid="uid://du0gy4snar4ym" path="res://BackEnd/Ressources/RessourcesSoin/ressource_soin_base.gd" id="1_72hey"]
+
+[resource]
+script = ExtResource("1_72hey")
+nom = "IDE"
+quantite = 2

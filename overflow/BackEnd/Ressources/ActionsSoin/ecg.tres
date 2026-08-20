@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ActionSoin_base" format=3 uid="uid://ctdsvpbaf6stw"]
+
+[ext_resource type="Resource" uid="uid://dlhm86c1f2gjg" path="res://BackEnd/Ressources/ActionsSoin/interpretation_ecg.tres" id="1_cwysy"]
+[ext_resource type="Resource" uid="uid://b38m3f8ysqafh" path="res://BackEnd/Ressources/RessourcesSoin/ide.tres" id="2_p68pn"]
+[ext_resource type="Script" uid="uid://dr84n5nxrqxwl" path="res://BackEnd/Ressources/ActionsSoin/actions_soin_base.gd" id="3_vctfk"]
+
+[resource]
+script = ExtResource("3_vctfk")
+nom = "ECG"
+ressource_requise = ExtResource("2_p68pn")
+action_suivante_auto = ExtResource("1_cwysy")
+necessite_pause = true

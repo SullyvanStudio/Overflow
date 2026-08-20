@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5xnml4gvn52q" path="res://BackEnd/Scene/game_scene.gd" id="1_cuk2w"]
 [ext_resource type="PackedScene" uid="uid://dvnlbv4rfcf5m" path="res://FrontEnd/Scenes/Triage/scene_triage.tscn" id="2_5mw0s"]
+[ext_resource type="PackedScene" uid="uid://c2ptbsvckcufn" path="res://FrontEnd/Scenes/Patient/patient_resume.tscn" id="3_76vqr"]
 [ext_resource type="PackedScene" uid="uid://dospw84rpcmvw" path="res://FrontEnd/Scenes/MainMenu/main_menu.tscn" id="3_t2exw"]
 
 [node name="GameScene" type="Node2D" unique_id=52898531 node_paths=PackedStringArray("normal_layer", "main_menu")]
@@ -9,6 +10,7 @@ script = ExtResource("1_cuk2w")
 normal_layer = NodePath("NormalLayer")
 main_menu = NodePath("NormalLayer/MainMenu")
 scene_triage = ExtResource("2_5mw0s")
+scene_patient_resume = ExtResource("3_76vqr")
 
 [node name="NormalLayer" type="CanvasLayer" parent="." unique_id=431886004]
 

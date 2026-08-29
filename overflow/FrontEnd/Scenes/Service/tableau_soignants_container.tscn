@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cr8t4x7wonuoj"]
+
+[ext_resource type="Script" uid="uid://brotewyno0k70" path="res://FrontEnd/Scenes/Service/tableau_soignants_container.gd" id="1_1l3a5"]
+[ext_resource type="PackedScene" uid="uid://d2pl1itmg0dao" path="res://FrontEnd/Scenes/Service/tableau_soignant_miniature.tscn" id="2_u7rk6"]
+
+[node name="SoignantsContainer" type="PanelContainer" unique_id=99993043 node_paths=PackedStringArray("vbox")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_1l3a5")
+vbox = NodePath("MarginContainer/VBoxContainer")
+scene_tableau_soignant_miniature = ExtResource("2_u7rk6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=600749280]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1189294634]
+layout_mode = 2

@@ -12,7 +12,7 @@ var patient_constantes : PatientConstantes:
 			constante_changed()
 
 func constante_changed() -> void:
-	var constantes_triees := PathologieLoader.constantes.duplicate()
+	var constantes_triees := LoaderNeeded.constantes.duplicate()
 	constantes_triees.sort_custom(func(a, b): return a.ordre_affichage < b.ordre_affichage)
 	for constante in constantes_triees:
 		var valeur = patient_constantes.get_valeur(constante)

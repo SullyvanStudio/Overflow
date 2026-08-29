@@ -1,7 +1,29 @@
 [gd_scene format=3 uid="uid://dospw84rpcmvw"]
 
 [ext_resource type="Script" uid="uid://6uqwlwrwis16" path="res://FrontEnd/Scenes/MainMenu/main_menu.gd" id="1_piol2"]
+[ext_resource type="StyleBox" uid="uid://cfyytv4xggetv" path="res://FrontEnd/Scenes/MainMenu/button_flat.tres" id="3_7j2m7"]
 [ext_resource type="Texture2D" uid="uid://drcg1jajy8vpe" path="res://FrontEnd/Ressources/Images/fond.png" id="3_65yoi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65yoi"]
+resource_local_to_scene = true
+bg_color = Color(0.21929091, 0.43013054, 0.46700358, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 15.0
+expand_margin_bottom = 10.0
+shadow_size = 3
+shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2k4d4"]
 resource_local_to_scene = true
@@ -83,6 +105,7 @@ theme_override_constants/separation = 35
 layout_mode = 2
 theme_override_constants/outline_size = 13
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_65yoi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2k4d4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_85kcx")
 text = "Débuter la Garde"
@@ -91,6 +114,7 @@ text = "Débuter la Garde"
 layout_mode = 2
 theme_override_constants/outline_size = 13
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_7j2m7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2k4d4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_85kcx")
 text = "Quitter"

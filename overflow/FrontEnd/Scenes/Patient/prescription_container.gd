@@ -1,5 +1,7 @@
 extends PanelContainer
 
+
+signal prescription_choiced
 var patient : PatientData:
 	set(new_patient):
 		if new_patient!= patient:
@@ -11,7 +13,7 @@ var array_prescription: Array[PrescriptionsInstance]
 
 
 func generer_boutons_prescription(_patient : PatientData) -> void:
-	for action in PathologieLoader.get_actions_prescriptibles():
+	for action in LoaderNeeded.get_actions_prescriptibles():
 		var bouton : Button = CheckButton.new()
 		bouton.text = action.nom
 		bouton.toggled.connect(_on_button_toggled.bind(action, _patient))
@@ -38,4 +40,5 @@ func _delete_prescription(_action):
 
 func _on_valider_button_pressed() -> void:
 	Signalbus.prescriptions_picked.emit(array_prescription)
-	print(array_prescription)
+	prescription_choiced.emit()
+	

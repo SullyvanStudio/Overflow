@@ -4,12 +4,17 @@ class_name PatientData
 
 enum TYPE{HOMME, FEMME, ENFANT}
 var type: TYPE = TYPE.HOMME
-var diagnostic_context : DiagnosticContext
 var age : int
 enum SEX{MASCULIN, FEMININ}
 var sex : SEX
-var constantes : PatientConstantes
 var score_gravite : int = 0
+
+
+var diagnostic_context : DiagnosticContext
+var constantes : PatientConstantes
+var patient_examen : PatientExamens
+var differential_diagnosis : DifferentialDiagnosis
+
 
 #---------------------------
 # Impatience
@@ -35,8 +40,10 @@ func _init(_age : int, _sex : SEX):
 
 	diagnostic_context = DiagnosticContext.new()
 	constantes = PatientConstantes.new()
-	constantes.generer(diagnostic_context.pathologie, diagnostic_context.symptomes_array, PathologieLoader.constantes)
+	patient_examen = PatientExamens.new()
+	constantes.generer(diagnostic_context.pathologie, diagnostic_context.symptomes_array, LoaderNeeded.constantes)
 	score_gravite = ScoreCalculator.calculer_score(self)
+	differential_diagnosis = DifferentialDiagnosis.new(self, LoaderNeeded.pathologies, patient_examen.resultats)
 
 func get_score_gravite() -> int:
 	return score_gravite
@@ -49,6 +56,9 @@ func get_constantes_context() -> PatientConstantes:
 
 func get_pathologie() -> Pathologie_base:
 	return diagnostic_context.pathologie
+
+func get_differential_pathologies() -> Array:
+	return differential_diagnosis.resultats
 
 func get_pathologie_string() -> String:
 	return get_pathologie().nom
@@ -63,6 +73,9 @@ func get_symptomes_array_string() -> Array[String]:
 		array_string.append(symp.nom)
 	return array_string
 
+func get_patient_examens() -> PatientExamens:
+	return patient_examen
+
 func get_age() -> int : 
 	return age
 
@@ -75,7 +88,7 @@ func avancer_tour() -> void:
 	tours_attente += 1
 
 func get_douleur() -> float:
-	var constante_douleur : Constante_base= PathologieLoader.get_constante_by_name("Douleur")
+	var constante_douleur : Constante_base= LoaderNeeded.get_constante_by_name("Douleur")
 	if constante_douleur == null:
 		return 0.0
 	return constantes.get_valeur(constante_douleur)

@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="Ressource_base" format=3 uid="uid://b38m3f8ysqafh"]
 
 [ext_resource type="Script" uid="uid://du0gy4snar4ym" path="res://BackEnd/Ressources/RessourcesSoin/ressource_soin_base.gd" id="1_72hey"]
+[ext_resource type="Texture2D" uid="uid://pse5h4krqg3x" path="res://FrontEnd/Ressources/Images/pictogramme_tableau/prictogramme_infirmiere.png" id="2_ht5jf"]
 
 [resource]
 script = ExtResource("1_72hey")
 nom = "IDE"
 quantite = 2
+texture = ExtResource("2_ht5jf")

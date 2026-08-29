@@ -9,7 +9,7 @@ func _init() -> void:
 	obtenir_symptomes()
 
 func obtenir_pathologie():
-	pathologie = PathologieLoader.get_random_pathology()
+	pathologie = LoaderNeeded.get_random_pathology()
 
 func obtenir_symptomes() -> void:
 	if symptomes_array == []:

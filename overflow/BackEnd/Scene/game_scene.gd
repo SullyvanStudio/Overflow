@@ -7,6 +7,7 @@ class_name GameScene
 @export_category("Scene")
 @export var scene_triage : PackedScene
 @export var scene_patient_resume : PackedScene
+@export var scene_tableau_service : PackedScene
 @export_category("Variables")
 @export var duree_choix_tri : int = 10
 
@@ -15,6 +16,7 @@ var gestionnaire_soins : GestionnaireFilesAttente = null
 var score_total : float = 0.0
 var nombre_choix : int = 0
 
+var tableau_service : TableauService = null
 var current_scene = null
 
 func _ready() -> void:
@@ -26,15 +28,20 @@ func _game_started_asked() -> void:
 	create_new_game()
 
 func create_new_game() -> void:
+	setup_tableau_service()
 	patients_manager = PatientsManager.new()
 	gestionnaire_soins = GestionnaireFilesAttente.new()
 	var __ = patients_manager.choix_evalue.connect(_on_choix_evalue)
 	__ = patients_manager.patient_parti.connect(_on_patient_parti)
 	current_scene = scene_triage.instantiate()
 	current_scene.time = duree_choix_tri
-	current_scene.liste_patients = patients_manager.patients_list
+	current_scene.liste_patients = patients_manager.patients_triage_list
 	__ = current_scene.temps_ecoule.connect(_on_temps_ecoule)
 	normal_layer.add_child(current_scene)
+
+func setup_tableau_service() -> void:
+	tableau_service = scene_tableau_service.instantiate()
+	normal_layer.add_child(tableau_service)
 
 func _on_temps_ecoule() -> void:
 	patients_manager.nouveau_tour()

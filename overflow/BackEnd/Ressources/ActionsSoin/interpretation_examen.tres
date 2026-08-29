@@ -8,3 +8,4 @@ script = ExtResource("2_mo0hi")
 nom = "Interpretation"
 ressource_requise = ExtResource("1_wgku5")
 duree_tours = 2
+est_prescriptible = false

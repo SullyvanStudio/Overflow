@@ -9,3 +9,4 @@ nom = "Interprétation ECG"
 ressource_requise = ExtResource("1_s0bf2")
 duree_tours = 2
 est_prescriptible = false
+est_examen_diagnostique = true

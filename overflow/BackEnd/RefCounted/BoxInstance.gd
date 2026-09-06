@@ -8,11 +8,13 @@ var current_patient : PatientData = null:
 		if new != current_patient:
 			current_patient = new
 			current_patient_changed.emit(current_patient)
+			current_patient.current_box = self
 			if new != null:
 				print("Box : %s " %nom)
 
 func _init(_nom) -> void:
 	nom = _nom
+	Signalbus.new_box_instance.emit(self)
 
 func add_patient(patient : PatientData) -> void:
 	if current_patient == null :

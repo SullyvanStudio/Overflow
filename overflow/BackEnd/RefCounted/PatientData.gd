@@ -8,6 +8,7 @@ var age : int
 enum SEX{MASCULIN, FEMININ}
 var sex : SEX
 var score_gravite : int = 0
+var current_box : BoxInstance
 
 
 var diagnostic_context : DiagnosticContext
@@ -41,9 +42,10 @@ func _init(_age : int, _sex : SEX):
 	diagnostic_context = DiagnosticContext.new()
 	constantes = PatientConstantes.new()
 	patient_examen = PatientExamens.new()
+	patient_examen.generer(get_pathologie(), LoaderNeeded.actions )
 	constantes.generer(diagnostic_context.pathologie, diagnostic_context.symptomes_array, LoaderNeeded.constantes)
 	score_gravite = ScoreCalculator.calculer_score(self)
-	differential_diagnosis = DifferentialDiagnosis.new(self, LoaderNeeded.pathologies, patient_examen.resultats)
+	differential_diagnosis = DifferentialDiagnosis.new(self, LoaderNeeded.pathologies)
 
 func get_score_gravite() -> int:
 	return score_gravite
@@ -58,7 +60,7 @@ func get_pathologie() -> Pathologie_base:
 	return diagnostic_context.pathologie
 
 func get_differential_pathologies() -> Array:
-	return differential_diagnosis.resultats
+	return differential_diagnosis.get_top_candidats()
 
 func get_pathologie_string() -> String:
 	return get_pathologie().nom

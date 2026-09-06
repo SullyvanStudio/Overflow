@@ -8,3 +8,4 @@ class_name ActionSoin_base
 @export var action_suivante_auto : ActionSoin_base  # ex: ECG -> Interprétation ECG
 @export var necessite_pause : bool = false   # true = pause le jeu pendant l'exécution
 @export var est_prescriptible : bool = true  # false = créée uniquement via chaînage (ex: interprétations)
+@export var est_examen_diagnostique : bool = false

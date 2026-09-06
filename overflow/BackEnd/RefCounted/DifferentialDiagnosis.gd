@@ -29,9 +29,8 @@ var resultats_examens : Dictionary = {}  # ActionSoin_base -> Pathologie_base | 
 										  # UNIQUEMENT les examens prescrits et rendus
 var resultats : Array[Dictionary] = []   # [{ pathologie, score, raison }], trié score décroissant
 
-func _init(patient : PatientData, pathologies_candidates : Array[Pathologie_base], _resultats_examens : Dictionary = {}) -> void:
+func _init(patient : PatientData, pathologies_candidates : Array[Pathologie_base]) -> void:
 	symptomes_patient = patient.get_symptomes_array()
-	resultats_examens = _resultats_examens
 	calculer(pathologies_candidates)
 
 func calculer(pathologies_candidates : Array[Pathologie_base]) -> void:

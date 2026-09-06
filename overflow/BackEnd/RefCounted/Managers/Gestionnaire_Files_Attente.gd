@@ -6,11 +6,16 @@ var tour_actuel : int = 0
 
 func _init() -> void:
 	var __ = Signalbus.prescriptions_picked.connect(_on_prescriptions_asked)
-
+	for ressource in LoaderNeeded.get_ressources_soins():
+		obtenir_file(ressource) 
+		
 func obtenir_file(ressource : Ressource_base) -> FileAttenteRessource:
 	if not files.has(ressource):
 		files[ressource] = FileAttenteRessource.new(ressource)
 	return files[ressource]
+
+func get_files() -> Dictionary:
+	return files
 
 func prescrire(action_template : ActionSoin_base, patient : PatientData) -> ActionInstance:
 	var instance := ActionInstance.new(action_template, patient)

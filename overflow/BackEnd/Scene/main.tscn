@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bjtlb62f15v7"]
+
+[ext_resource type="Script" uid="uid://ex1s52lw3uvt" path="res://BackEnd/Scene/main.gd" id="1_fml7j"]
+[ext_resource type="PackedScene" uid="uid://dvnlbv4rfcf5m" path="res://FrontEnd/Scenes/Triage/scene_triage.tscn" id="2_r720p"]
+[ext_resource type="PackedScene" uid="uid://c2ptbsvckcufn" path="res://FrontEnd/Scenes/Patient/patient_resume.tscn" id="3_3ba47"]
+[ext_resource type="PackedScene" uid="uid://ba6n7ntdvbjrl" path="res://FrontEnd/Scenes/Service/tableau_service.tscn" id="4_5ao1g"]
+[ext_resource type="PackedScene" uid="uid://dospw84rpcmvw" path="res://FrontEnd/Scenes/MainMenu/main_menu.tscn" id="5_7p187"]
+[ext_resource type="Script" uid="uid://5xnml4gvn52q" path="res://BackEnd/Scene/game_loop.gd" id="6_r720p"]
+
+[node name="Main" type="Node2D" unique_id=52898531 node_paths=PackedStringArray("normal_layer", "main_menu", "gameloop", "game_scenes")]
+script = ExtResource("1_fml7j")
+normal_layer = NodePath("NormalLayer")
+main_menu = NodePath("NormalLayer/MainMenu")
+gameloop = NodePath("GameLoop")
+game_scenes = NodePath("NormalLayer/GameScenes")
+
+[node name="NormalLayer" type="CanvasLayer" parent="." unique_id=431886004]
+
+[node name="MainMenu" parent="NormalLayer" unique_id=2023459367 instance=ExtResource("5_7p187")]
+
+[node name="GameScenes" type="Control" parent="NormalLayer" unique_id=323675072]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameLoop" type="Node2D" parent="." unique_id=209653303]
+script = ExtResource("6_r720p")
+scene_triage = ExtResource("2_r720p")
+scene_patient_resume = ExtResource("3_3ba47")
+scene_tableau_service = ExtResource("4_5ao1g")
+metadata/_custom_type_script = "uid://5xnml4gvn52q"
+
+[connection signal="game_state_changed" from="GameLoop" to="." method="_on_game_loop_game_state_changed"]

@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://c2ptbsvckcufn"]
+
+[ext_resource type="PackedScene" uid="uid://cefgel5sekm3g" path="res://FrontEnd/Scenes/Patient/prescription_container.tscn" id="1_kk8xl"]
+[ext_resource type="Script" uid="uid://bbf2pprqlhbng" path="res://FrontEnd/Scenes/Patient/patient_resume.gd" id="1_w5mwl"]
+[ext_resource type="PackedScene" uid="uid://bjcosyxa7u3x4" path="res://FrontEnd/Scenes/Patient/resume_symptomes_patient.tscn" id="2_w5mwl"]
+[ext_resource type="StyleBox" uid="uid://cdj0l3rjtmpyp" path="res://FrontEnd/Ressources/new_style_box_flat.tres" id="3_1d4mp"]
+[ext_resource type="PackedScene" uid="uid://dnt2wlw3aubp1" path="res://FrontEnd/Scenes/Patient/resume_pathologies_container.tscn" id="3_j3xey"]
+
+[node name="PatientResume" type="Control" unique_id=1234933667 node_paths=PackedStringArray("symptomes_container", "prescription_container", "pathologies_differentiel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5mwl")
+symptomes_container = NodePath("MarginContainer/HBoxContainer/SymptomesPatient")
+prescription_container = NodePath("MarginContainer/HBoxContainer/VBoxContainer/PrescriptionContainer")
+pathologies_differentiel = NodePath("MarginContainer/HBoxContainer/VBoxContainer/PathologiesContainer")
+
+[node name="Panel" type="Panel" parent="." unique_id=553887402]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=658335263]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1068450036]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SymptomesPatient" parent="MarginContainer/HBoxContainer" unique_id=614567003 instance=ExtResource("2_w5mwl")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=809717313]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="CirconstancesContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1721951879]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_1d4mp")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/CirconstancesContainer" unique_id=1690327207]
+layout_mode = 2
+text = "Circonstances"
+
+[node name="PathologiesContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1068285143 instance=ExtResource("3_j3xey")]
+layout_mode = 2
+
+[node name="PrescriptionContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1084737812 instance=ExtResource("1_kk8xl")]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_1d4mp")
+
+[node name="ObservationsContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=805250352]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_1d4mp")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/ObservationsContainer" unique_id=869362369]
+layout_mode = 2
+text = "Observations :"
+
+[node name="DecisionsContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1541513129]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_1d4mp")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/DecisionsContainer" unique_id=619322622]
+layout_mode = 2
+text = "Decisions"
+
+[connection signal="prescription_choiced" from="MarginContainer/HBoxContainer/VBoxContainer/PrescriptionContainer" to="." method="_on_prescription_container_prescription_choiced"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://lgpryp17d1yx"]
+
+[ext_resource type="Script" uid="uid://boyxu0ytiqngq" path="res://FrontEnd/Scenes/Service/unite.gd" id="1_jvjkg"]
+[ext_resource type="PackedScene" uid="uid://d2pl1itmg0dao" path="res://FrontEnd/Scenes/Service/tableau_soignant_miniature.tscn" id="2_lrvtd"]
+
+[node name="Unite" type="HBoxContainer" unique_id=218632004 node_paths=PackedStringArray("soignants_vbox", "file_hbox")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvjkg")
+soignants_vbox = NodePath("Soignant_Vbox")
+file_hbox = NodePath("File_Hbox")
+miniature_scene = ExtResource("2_lrvtd")
+
+[node name="Soignant_Vbox" type="VBoxContainer" parent="." unique_id=422143200]
+layout_mode = 2
+
+[node name="File_Hbox" type="HBoxContainer" parent="." unique_id=1910365726]
+layout_mode = 2

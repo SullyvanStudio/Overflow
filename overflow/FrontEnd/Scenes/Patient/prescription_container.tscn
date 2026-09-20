@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cefgel5sekm3g"]
+
+[ext_resource type="Script" uid="uid://5g7dt80sm2iu" path="res://FrontEnd/Scenes/Patient/prescription_container.gd" id="1_iecqg"]
+
+[node name="PrescriptionContainer" type="PanelContainer" unique_id=1084737812 node_paths=PackedStringArray("container")]
+size_flags_horizontal = 3
+script = ExtResource("1_iecqg")
+container = NodePath("VBoxContainer/GridContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1750061121]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=680716405]
+layout_mode = 2
+text = "Prescription"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1516063328]
+layout_mode = 2
+columns = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1245198116]
+layout_mode = 2
+
+[node name="Valider_Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=79217897]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Valider"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Valider_Button" to="." method="_on_valider_button_pressed"]

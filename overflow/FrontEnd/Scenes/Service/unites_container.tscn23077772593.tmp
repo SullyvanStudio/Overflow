@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://swkrdyf2bfif"]
+
+[ext_resource type="Script" uid="uid://bip0uhm3586jn" path="res://FrontEnd/Scenes/Service/unites_container.gd" id="1_3efii"]
+[ext_resource type="PackedScene" uid="uid://lgpryp17d1yx" path="res://FrontEnd/Scenes/Service/Unite.tscn" id="3_qam0q"]
+
+[node name="Unites_Container" type="PanelContainer" unique_id=561014731]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_3efii")
+unite_vbox_scene = ExtResource("3_qam0q")
+unite_miniature = ExtResource("3_qam0q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=387647085]
+layout_mode = 2
+
+[node name="Soignants_Container" type="VBoxContainer" parent="HBoxContainer" unique_id=161956550]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Unite" parent="HBoxContainer/Soignants_Container" unique_id=218632004 instance=ExtResource("3_qam0q")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Unite2" parent="HBoxContainer/Soignants_Container" unique_id=2101378166 instance=ExtResource("3_qam0q")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Examens_Container" type="VBoxContainer" parent="HBoxContainer" unique_id=1730352288]
+layout_mode = 2
+size_flags_horizontal = 3

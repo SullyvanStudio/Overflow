@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ckbb3wdy2w8kv"]
+
+[ext_resource type="Script" uid="uid://2impdphtbbqn" path="res://FrontEnd/Scenes/Silhouette/constantes_etiquette.gd" id="1_hx5tg"]
+[ext_resource type="Texture2D" uid="uid://dx771a24y5v88" path="res://FrontEnd/Ressources/Images/icone/pouls.png" id="1_qtv01"]
+
+[node name="Constantes_Etiquette" type="Control" unique_id=683383572 node_paths=PackedStringArray("texture", "label")]
+custom_minimum_size = Vector2(40, 12)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_hx5tg")
+texture = NodePath("HBoxContainer/TextureConstante")
+label = NodePath("HBoxContainer/LabelConstante")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1721213998]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureConstante" type="TextureRect" parent="HBoxContainer" unique_id=1893476167]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_qtv01")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="LabelConstante" type="Label" parent="HBoxContainer" unique_id=48023789]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "100bpm"

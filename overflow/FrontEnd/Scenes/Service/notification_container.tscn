@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://p4ve5esd4fp4"]
+
+[ext_resource type="Script" uid="uid://c2dqu6g3sruwb" path="res://FrontEnd/Scenes/Service/notification_container.gd" id="1_bp7mf"]
+[ext_resource type="Script" uid="uid://dnnkij404pwsu" path="res://FrontEnd/Scenes/Service/time_line.gd" id="2_lfcr7"]
+
+[node name="NotificationContainer" type="PanelContainer" unique_id=1073786415]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_bp7mf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1219644108]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=90139860]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PauseButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1421075237]
+layout_mode = 2
+text = "II"
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=339263792]
+layout_mode = 2
+text = ">"
+
+[node name="RapideButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=520233363]
+layout_mode = 2
+text = ">>"
+
+[node name="TimeLine" type="PanelContainer" parent="VBoxContainer" unique_id=1875239039]
+custom_minimum_size = Vector2(200, 15)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("2_lfcr7")
+step_width = 45.0
+current_turn_x = 20.0
+turn_height = 10.0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RapideButton" to="." method="_on_rapide_button_pressed"]

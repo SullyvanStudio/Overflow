@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Event_Resource" format=3 uid="uid://b0r3g0gachotu"]
+
+[ext_resource type="Script" uid="uid://c83h8nc3oavko" path="res://BackEnd/Ressources/Events/event_ressource.gd" id="1_fq8uu"]
+
+[resource]
+script = ExtResource("1_fq8uu")
+nom = "Nouveau Patient"
+couleur = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c83h8nc3oavko"

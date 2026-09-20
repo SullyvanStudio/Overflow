@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bjtlb62f15v7"]
+
+[ext_resource type="Script" uid="uid://ex1s52lw3uvt" path="res://BackEnd/Scene/main.gd" id="1_fml7j"]
+[ext_resource type="Script" uid="uid://dls3oypkdiwvs" path="res://FrontEnd/Components/scene_manager.gd" id="2_ycsm0"]
+[ext_resource type="PackedScene" uid="uid://dospw84rpcmvw" path="res://FrontEnd/Scenes/MainMenu/main_menu.tscn" id="5_7p187"]
+[ext_resource type="Script" uid="uid://5xnml4gvn52q" path="res://BackEnd/Scene/game_loop.gd" id="6_r720p"]
+
+[node name="Main" type="Node2D" unique_id=52898531 node_paths=PackedStringArray("scene_manager", "game_loop")]
+script = ExtResource("1_fml7j")
+scene_manager = NodePath("SceneManager")
+game_loop = NodePath("GameLoop")
+
+[node name="GameLayer" type="CanvasLayer" parent="." unique_id=431886004]
+
+[node name="MenuLayer" type="CanvasLayer" parent="." unique_id=828933106]
+layer = 5
+
+[node name="MainMenu" parent="MenuLayer" unique_id=2023459367 instance=ExtResource("5_7p187")]
+
+[node name="SceneManager" type="Control" parent="." unique_id=1255820612 node_paths=PackedStringArray("main", "main_menu", "game_layer", "menu_layer")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ycsm0")
+main_menu_scene = ExtResource("5_7p187")
+main = NodePath("..")
+main_menu = NodePath("../MenuLayer/MainMenu")
+game_layer = NodePath("../GameLayer")
+menu_layer = NodePath("../MenuLayer")
+metadata/_custom_type_script = "uid://dls3oypkdiwvs"
+
+[node name="GameLoop" type="Node2D" parent="." unique_id=138090589]
+script = ExtResource("6_r720p")
+metadata/_custom_type_script = "uid://5xnml4gvn52q"
+
+[connection signal="game_started" from="MenuLayer/MainMenu" to="." method="_on_main_menu_game_started"]
